@@ -1,20 +1,19 @@
 <script>
+	import { login } from '$lib/api';
 
 	let email = '';
 	let password = '';
 	let error = '';
 	let loading = false;
 
-
-	async function handleSubmit(e) {
-		e.preventDefault();
+	async function handleSubmit() {
 		error = '';
 		loading = true;
 
 		try {
-			const res = await api.login({ email, password });
+			const res = await login({ email, password });
 			localStorage.setItem('token', res.token);
-			window.location.href = '/';
+			window.location.href = '/tasks';
 		} catch (err) {
 			error = err.message;
 		} finally {
@@ -25,7 +24,6 @@
 
 <main class="auth-wrapper">
 	<div class="auth-container">
-		<!-- LEFT FORM -->
 		<div class="panel form-panel">
 			<div class="form-inner">
 				<h1 class="panel-title">Log In</h1>
@@ -34,7 +32,7 @@
 					<p style="color:red">{error}</p>
 				{/if}
 
-				<form class="form" on:submit={handleSubmit}>
+				<form class="form" on:submit|preventDefault={handleSubmit}>
 					<div class="form-row">
 						<div class="input-group">
 							<label for="email">Email</label>
@@ -43,6 +41,7 @@
 								bind:value={email}
 								placeholder="niveshbansal@example.com"
 								required
+								disabled={loading}
 							/>
 						</div>
 					</div>
@@ -50,7 +49,13 @@
 					<div class="form-row">
 						<div class="input-group">
 							<label for="password">Password</label>
-							<input type="password" bind:value={password} placeholder="••••••••" required />
+							<input
+								type="password"
+								bind:value={password}
+								placeholder="••••••••"
+								required
+								disabled={loading}
+							/>
 						</div>
 					</div>
 
