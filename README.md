@@ -3,6 +3,11 @@
 This is the **frontend** for a Task Tracker application built with **SvelteKit**. It provides a responsive interface for users to **sign up, log in, and manage tasks**.  
 
 ---
+## 📸 Project Preview
+
+![Preview](https://github.com/niveshbansal07/Task-and-Time-Tracking-App-frontend/blob/main/timetask.png)
+![Preview](https://github.com/niveshbansal07/Task-and-Time-Tracking-App-frontend/blob/main/timetask-2.png)
+
 
 ## Project Structure
 
