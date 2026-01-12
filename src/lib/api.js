@@ -36,23 +36,23 @@ export async function login({ email, password }) {
 
 
 
-export async function getTasks() {
-  const token = localStorage.getItem("token"); 
-  if (!token) throw new Error("Not authenticated");
+// export async function getTasks() {
+//   const token = localStorage.getItem("token"); 
+//   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch(`${API_URL}/tasks`, {
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}` 
-    }
-  });
+//   const res = await fetch(`${API_URL}/tasks`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Authorization": `Bearer ${token}` 
+//     }
+//   });
 
-  if (!res.ok) {
-    const errorData = await res.json();
-    throw new Error(errorData.message || "Failed to fetch tasks");
-  }
+//   if (!res.ok) {
+//     const errorData = await res.json();
+//     throw new Error(errorData.message || "Failed to fetch tasks");
+//   }
 
-  const tasks = await res.json();
-  return tasks;
-}
+//   const tasks = await res.json();
+//   return tasks;
+// }
 
