@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://task-and-time-tracking-app-backend.onrender.com/api/";
 
 export async function signup(data) {
     const res = await fetch(`${API_URL}/auth/signup`, {
