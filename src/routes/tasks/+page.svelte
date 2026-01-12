@@ -7,7 +7,7 @@
 	let tasks = [];
 	let timerInterval;
 
-	const API_BASE = '/api/tasks';
+	const API_BASE = 'https://task-and-time-tracking-app-backend.onrender.com/api/tasks';
 
 	/* ================= AUTH ================= */
 
@@ -299,3 +299,4 @@
 		border-radius: 8px;
 	}
 </style>
+
