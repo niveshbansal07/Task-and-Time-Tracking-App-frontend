@@ -1,27 +1,4 @@
 const API_URL = "https://task-and-time-tracking-app-backend.onrender.com/api";
-import { onMount } from "svelte";
-
-
-onMount(async () => {
-  try {
-    const res = await fetch("https://task-and-time-tracking-app-backend.onrender.com/api/db-test");
-    const data = await res.json();
-    console.log("Backend test response:", data);
-  } catch (err) {
-    console.error("Failed to connect to backend:", err);
-  }
-});
-
-
-onMount(async () => {
-    try {
-      const res = await fetch(`${API_URL}/db-test`);
-      const data = await res.json();
-      console.log("Backend test response:", data);
-    } catch (err) {
-      console.error("Failed to connect to backend:", err);
-    }
-  });
 
 export async function signup(data) {
     const res = await fetch(`${API_URL}/auth/signup`, {
