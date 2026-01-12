@@ -6,7 +6,7 @@ export default {
 	server: {
 		proxy: {
 			'/api': {
-				target: 'https://task-and-time-tracking-app-backend.onrender.com/',
+				target: 'https://task-and-time-tracking-app-backend.onrender.com',
 				changeOrigin: true,
 				secure: false
 			}
